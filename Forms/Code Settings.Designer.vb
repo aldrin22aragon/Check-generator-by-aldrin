@@ -25,8 +25,6 @@ Partial Class Code_Settings
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Code_Settings))
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.ButtonAddCode = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.ButtonSave = New System.Windows.Forms.Button()
         Me.ButtonAmount = New System.Windows.Forms.Button()
@@ -34,18 +32,20 @@ Partial Class Code_Settings
         Me.ButtonPayeeLine1 = New System.Windows.Forms.Button()
         Me.ButtonCrossLine = New System.Windows.Forms.Button()
         Me.ButtonDate = New System.Windows.Forms.Button()
-        Me.PrintPreview = New System.Windows.Forms.PrintPreviewControl()
-        Me.PrintChequeDocument = New System.Drawing.Printing.PrintDocument()
-        Me.FontDialog1 = New System.Windows.Forms.FontDialog()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.ButtonFont = New System.Windows.Forms.Button()
+        Me.ButtonAddCode = New System.Windows.Forms.Button()
         Me.CbShow = New System.Windows.Forms.CheckBox()
+        Me.ButtonSampleValues = New System.Windows.Forms.Button()
         Me.XPos = New System.Windows.Forms.NumericUpDown()
         Me.Ypos = New System.Windows.Forms.NumericUpDown()
+        Me.PrintPreview = New System.Windows.Forms.PrintPreviewControl()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Degree = New System.Windows.Forms.NumericUpDown()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.ButtonFont = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.PrintChequeDocument = New System.Drawing.Printing.PrintDocument()
+        Me.FontDialog1 = New System.Windows.Forms.FontDialog()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.XPos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,56 +60,46 @@ Partial Class Code_Settings
         Me.ComboBox1.Location = New System.Drawing.Point(17, 25)
         Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(184, 25)
+        Me.ComboBox1.Size = New System.Drawing.Size(218, 25)
         Me.ComboBox1.TabIndex = 0
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.GroupBox1.Controls.Add(Me.GroupBox2)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.ButtonFont)
         Me.GroupBox1.Controls.Add(Me.ButtonAddCode)
-        Me.GroupBox1.Controls.Add(Me.Button6)
+        Me.GroupBox1.Controls.Add(Me.CbShow)
+        Me.GroupBox1.Controls.Add(Me.ButtonSampleValues)
+        Me.GroupBox1.Controls.Add(Me.XPos)
         Me.GroupBox1.Controls.Add(Me.ComboBox1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Controls.Add(Me.Ypos)
+        Me.GroupBox1.Controls.Add(Me.PrintPreview)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.Degree)
+        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(218, 98)
+        Me.GroupBox1.Size = New System.Drawing.Size(952, 430)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Code"
         '
-        'ButtonAddCode
-        '
-        Me.ButtonAddCode.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonAddCode.Location = New System.Drawing.Point(147, 57)
-        Me.ButtonAddCode.Name = "ButtonAddCode"
-        Me.ButtonAddCode.Size = New System.Drawing.Size(54, 29)
-        Me.ButtonAddCode.TabIndex = 6
-        Me.ButtonAddCode.Text = "Add"
-        Me.ButtonAddCode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ButtonAddCode.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.ButtonAddCode.UseVisualStyleBackColor = True
-        '
-        'Button6
-        '
-        Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button6.Location = New System.Drawing.Point(17, 57)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(124, 29)
-        Me.Button6.TabIndex = 5
-        Me.Button6.Text = "Edit Template"
-        Me.Button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button6.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.Button6.UseVisualStyleBackColor = True
-        '
         'GroupBox2
         '
+        Me.GroupBox2.BackColor = System.Drawing.Color.CornflowerBlue
         Me.GroupBox2.Controls.Add(Me.ButtonSave)
         Me.GroupBox2.Controls.Add(Me.ButtonAmount)
         Me.GroupBox2.Controls.Add(Me.ButtonPayeeLine2)
         Me.GroupBox2.Controls.Add(Me.ButtonPayeeLine1)
         Me.GroupBox2.Controls.Add(Me.ButtonCrossLine)
         Me.GroupBox2.Controls.Add(Me.ButtonDate)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 116)
+        Me.GroupBox2.Location = New System.Drawing.Point(17, 92)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(218, 315)
+        Me.GroupBox2.Size = New System.Drawing.Size(218, 326)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Components"
@@ -193,34 +183,71 @@ Partial Class Code_Settings
         Me.ButtonDate.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.ButtonDate.UseVisualStyleBackColor = True
         '
-        'PrintPreview
+        'Label3
         '
-        Me.PrintPreview.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.Label3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PrintPreview.Location = New System.Drawing.Point(248, 43)
-        Me.PrintPreview.Name = "PrintPreview"
-        Me.PrintPreview.Size = New System.Drawing.Size(638, 388)
-        Me.PrintPreview.TabIndex = 4
+        Me.Label3.BackColor = System.Drawing.SystemColors.MenuText
+        Me.Label3.ForeColor = System.Drawing.Color.DarkGoldenrod
+        Me.Label3.Location = New System.Drawing.Point(255, 17)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Padding = New System.Windows.Forms.Padding(4)
+        Me.Label3.Size = New System.Drawing.Size(211, 30)
+        Me.Label3.TabIndex = 61
+        Me.Label3.Text = "Component Name"
         '
-        'PrintChequeDocument
+        'ButtonFont
         '
+        Me.ButtonFont.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonFont.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonFont.Location = New System.Drawing.Point(541, 17)
+        Me.ButtonFont.Name = "ButtonFont"
+        Me.ButtonFont.Size = New System.Drawing.Size(45, 29)
+        Me.ButtonFont.TabIndex = 6
+        Me.ButtonFont.Text = "Font"
+        Me.ButtonFont.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonFont.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.ButtonFont.UseVisualStyleBackColor = True
+        '
+        'ButtonAddCode
+        '
+        Me.ButtonAddCode.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonAddCode.Location = New System.Drawing.Point(181, 57)
+        Me.ButtonAddCode.Name = "ButtonAddCode"
+        Me.ButtonAddCode.Size = New System.Drawing.Size(54, 29)
+        Me.ButtonAddCode.TabIndex = 6
+        Me.ButtonAddCode.Text = "Add"
+        Me.ButtonAddCode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonAddCode.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.ButtonAddCode.UseVisualStyleBackColor = True
         '
         'CbShow
         '
         Me.CbShow.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CbShow.AutoSize = True
-        Me.CbShow.Location = New System.Drawing.Point(418, 13)
+        Me.CbShow.Location = New System.Drawing.Point(472, 21)
         Me.CbShow.Name = "CbShow"
         Me.CbShow.Size = New System.Drawing.Size(63, 23)
         Me.CbShow.TabIndex = 60
         Me.CbShow.Text = "Show"
         Me.CbShow.UseVisualStyleBackColor = True
         '
+        'ButtonSampleValues
+        '
+        Me.ButtonSampleValues.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonSampleValues.Location = New System.Drawing.Point(17, 57)
+        Me.ButtonSampleValues.Name = "ButtonSampleValues"
+        Me.ButtonSampleValues.Size = New System.Drawing.Size(158, 29)
+        Me.ButtonSampleValues.TabIndex = 5
+        Me.ButtonSampleValues.Text = "Edit Template"
+        Me.ButtonSampleValues.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonSampleValues.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.ButtonSampleValues.UseVisualStyleBackColor = True
+        '
         'XPos
         '
         Me.XPos.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.XPos.Location = New System.Drawing.Point(611, 12)
+        Me.XPos.Location = New System.Drawing.Point(665, 20)
         Me.XPos.Maximum = New Decimal(New Integer() {1215752192, 23, 0, 0})
         Me.XPos.Minimum = New Decimal(New Integer() {1215752192, 23, 0, -2147483648})
         Me.XPos.Name = "XPos"
@@ -231,7 +258,7 @@ Partial Class Code_Settings
         'Ypos
         '
         Me.Ypos.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Ypos.Location = New System.Drawing.Point(733, 12)
+        Me.Ypos.Location = New System.Drawing.Point(787, 20)
         Me.Ypos.Maximum = New Decimal(New Integer() {1215752192, 23, 0, 0})
         Me.Ypos.Minimum = New Decimal(New Integer() {1215752192, 23, 0, -2147483648})
         Me.Ypos.Name = "Ypos"
@@ -239,21 +266,41 @@ Partial Class Code_Settings
         Me.Ypos.TabIndex = 55
         Me.Ypos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'PrintPreview
+        '
+        Me.PrintPreview.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PrintPreview.Location = New System.Drawing.Point(255, 51)
+        Me.PrintPreview.Name = "PrintPreview"
+        Me.PrintPreview.Size = New System.Drawing.Size(685, 367)
+        Me.PrintPreview.TabIndex = 4
+        '
         'Label1
         '
         Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(538, 15)
+        Me.Label1.Location = New System.Drawing.Point(592, 23)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(73, 19)
         Me.Label1.TabIndex = 56
         Me.Label1.Text = "X Position"
         '
+        'Label4
+        '
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(837, 23)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(53, 19)
+        Me.Label4.TabIndex = 59
+        Me.Label4.Text = "Degree"
+        '
         'Label2
         '
         Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(661, 15)
+        Me.Label2.Location = New System.Drawing.Point(715, 23)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(72, 19)
         Me.Label2.TabIndex = 57
@@ -262,7 +309,7 @@ Partial Class Code_Settings
         'Degree
         '
         Me.Degree.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Degree.Location = New System.Drawing.Point(836, 12)
+        Me.Degree.Location = New System.Drawing.Point(890, 20)
         Me.Degree.Maximum = New Decimal(New Integer() {1215752192, 23, 0, 0})
         Me.Degree.Minimum = New Decimal(New Integer() {1215752192, 23, 0, -2147483648})
         Me.Degree.Name = "Degree"
@@ -270,58 +317,14 @@ Partial Class Code_Settings
         Me.Degree.TabIndex = 58
         Me.Degree.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label4
+        'PrintChequeDocument
         '
-        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(783, 15)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(53, 19)
-        Me.Label4.TabIndex = 59
-        Me.Label4.Text = "Degree"
-        '
-        'ButtonFont
-        '
-        Me.ButtonFont.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonFont.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonFont.Location = New System.Drawing.Point(487, 9)
-        Me.ButtonFont.Name = "ButtonFont"
-        Me.ButtonFont.Size = New System.Drawing.Size(45, 29)
-        Me.ButtonFont.TabIndex = 6
-        Me.ButtonFont.Text = "Font"
-        Me.ButtonFont.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ButtonFont.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.ButtonFont.UseVisualStyleBackColor = True
-        '
-        'Label3
-        '
-        Me.Label3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label3.BackColor = System.Drawing.SystemColors.MenuText
-        Me.Label3.ForeColor = System.Drawing.Color.DarkGoldenrod
-        Me.Label3.Location = New System.Drawing.Point(248, 9)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Padding = New System.Windows.Forms.Padding(4)
-        Me.Label3.Size = New System.Drawing.Size(164, 30)
-        Me.Label3.TabIndex = 61
-        Me.Label3.Text = "Component Name"
         '
         'Code_Settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(898, 443)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.ButtonFont)
-        Me.Controls.Add(Me.CbShow)
-        Me.Controls.Add(Me.XPos)
-        Me.Controls.Add(Me.Ypos)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Degree)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.PrintPreview)
-        Me.Controls.Add(Me.GroupBox2)
+        Me.ClientSize = New System.Drawing.Size(952, 430)
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold)
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -329,12 +332,12 @@ Partial Class Code_Settings
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Code_Settings"
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.XPos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Ypos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Degree, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -345,7 +348,7 @@ Partial Class Code_Settings
     Friend WithEvents ButtonDate As Button
     Friend WithEvents ButtonPayeeLine2 As Button
     Friend WithEvents ButtonPayeeLine1 As Button
-    Friend WithEvents Button6 As Button
+    Friend WithEvents ButtonSampleValues As Button
     Friend WithEvents ButtonAmount As Button
     Friend WithEvents PrintPreview As PrintPreviewControl
     Friend WithEvents ButtonSave As Button

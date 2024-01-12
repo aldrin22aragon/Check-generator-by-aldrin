@@ -6,19 +6,19 @@ Public Class Form1
       LoadCodes()
    End Sub
    Sub LoadCodes()
-      dgvCodes.Rows.Clear()
-      Dim codeFiles As String() = IO.Directory.GetFiles(CodesFolder)
-      If codeFiles.Length > 0 Then
-         For Each file As String In codeFiles
-            Dim fileNameWOext = IO.Path.GetFileNameWithoutExtension(file)
-            Dim FSC As New FileSettingsCreator2(Of Code)(file, New Code)
-            Dim indx = dgvCodes.Rows.Add(fileNameWOext)
-            dgvCodes.Rows(indx).Tag = FSC
-         Next
-      End If
-      DataGridView1_CurrentCellChanged(New Object, New EventArgs)
-      TemplateStructure.AppendTypes(CbTyp)
-   End Sub
+        'dgvCodes.Rows.Clear()
+        'Dim codeFiles As String() = IO.Directory.GetFiles(CodesFolder)
+        'If codeFiles.Length > 0 Then
+        '   For Each file As String In codeFiles
+        '      Dim fileNameWOext = IO.Path.GetFileNameWithoutExtension(file)
+        '      Dim FSC As New FileSettingsCreator2(Of Code)(file, New Code)
+        '      Dim indx = dgvCodes.Rows.Add(fileNameWOext)
+        '      dgvCodes.Rows(indx).Tag = FSC
+        '   Next
+        'End If
+        'DataGridView1_CurrentCellChanged(New Object, New EventArgs)
+        'TemplateStructure.AppendTypes(CbTyp)
+    End Sub
    Sub AddToDGVtemplates(template As TemplateStructure, Optional overwriteCurrentCell As Boolean = False)
       If overwriteCurrentCell Then
          Dim ndx As Integer = dgvTemplates.CurrentCell.RowIndex
@@ -29,18 +29,18 @@ Public Class Form1
       End If
    End Sub
    Private Sub DataGridView1_CurrentCellChanged(sender As Object, e As EventArgs) Handles dgvCodes.CurrentCellChanged
-      If dgvCodes.CurrentCell IsNot Nothing Then
-         Dim fsc As FileSettingsCreator2(Of Code) = dgvCodes.Rows(dgvCodes.CurrentCell.RowIndex).Tag
-         dgvTemplates.Rows.Clear()
-         If fsc IsNot Nothing Then
-            Dim code As Code = fsc.GetSettings()
-            For Each template As TemplateStructure In code.Templates
-               AddToDGVtemplates(template)
-            Next
-            dgvTemplates_CurrentCellChanged(New Object, New EventArgs)
-         End If
-      End If
-   End Sub
+        'If dgvCodes.CurrentCell IsNot Nothing Then
+        '   Dim fsc As FileSettingsCreator2(Of Code) = dgvCodes.Rows(dgvCodes.CurrentCell.RowIndex).Tag
+        '   dgvTemplates.Rows.Clear()
+        '   If fsc IsNot Nothing Then
+        '      Dim code As Code = fsc.GetSettings()
+        '      For Each template As TemplateStructure In code.Templates
+        '         AddToDGVtemplates(template)
+        '      Next
+        '      dgvTemplates_CurrentCellChanged(New Object, New EventArgs)
+        '   End If
+        'End If
+    End Sub
    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
       Dim aa As New Form_Add_Template(ListTemplateNames)
       If aa.ShowDialog = DialogResult.OK Then
@@ -75,17 +75,17 @@ Public Class Form1
    End Sub
 
    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-      If dgvCodes.CurrentCell IsNot Nothing Then
-         Dim fsc As FileSettingsCreator2(Of Code) = dgvCodes.Rows(dgvCodes.CurrentCell.RowIndex).Tag
-         Dim newCode As New Code
-         For Each row As DataGridViewRow In dgvTemplates.Rows
-            Dim tp As TemplateStructure = row.Tag
-            newCode.Templates.Add(tp)
-         Next
-         fsc.setSettings(newCode)
-         MsgBox("Saved")
-      End If
-   End Sub
+        'If dgvCodes.CurrentCell IsNot Nothing Then
+        '   Dim fsc As FileSettingsCreator2(Of Code) = dgvCodes.Rows(dgvCodes.CurrentCell.RowIndex).Tag
+        '   Dim newCode As New Code
+        '   For Each row As DataGridViewRow In dgvTemplates.Rows
+        '      Dim tp As TemplateStructure = row.Tag
+        '      newCode.Templates.Add(tp)
+        '   Next
+        '   fsc.setSettings(newCode)
+        '   MsgBox("Saved")
+        'End If
+    End Sub
 
    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles UpdatePreview.Click
       If dgvTemplates.CurrentCell IsNot Nothing Then

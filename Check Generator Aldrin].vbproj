@@ -80,7 +80,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\FileSettingsCreator2.vb" />
-    <Compile Include="Classes\Code.vb" />
     <Compile Include="Forms\Code Settings.Designer.vb">
       <DependentUpon>Code Settings.vb</DependentUpon>
     </Compile>
@@ -93,8 +92,8 @@
     <Compile Include="Forms\Main Form.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="P1\AOA_Timer.vb" />
-    <Compile Include="P1\TemplateProperties.vb" />
+    <Compile Include="Classes\AOA_Timer.vb" />
+    <Compile Include="Classes\TemplateProperties.vb" />
     <Compile Include="Classes\TemplateStructure.vb" />
     <Compile Include="Form Add Template.Designer.vb">
       <DependentUpon>Form Add Template.vb</DependentUpon>
@@ -132,7 +131,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="P1\CodeTemplates.vb" />
+    <Compile Include="Classes\CodeTemplates.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form Add Template.resx">
