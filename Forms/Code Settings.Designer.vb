@@ -25,13 +25,14 @@ Partial Class Code_Settings
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Code_Settings))
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ButtonAddCode = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.ButtonSave = New System.Windows.Forms.Button()
         Me.ButtonAmount = New System.Windows.Forms.Button()
         Me.ButtonPayeeLine2 = New System.Windows.Forms.Button()
         Me.ButtonPayeeLine1 = New System.Windows.Forms.Button()
-        Me.ButtonCrossCheck = New System.Windows.Forms.Button()
+        Me.ButtonCrossLine = New System.Windows.Forms.Button()
         Me.ButtonDate = New System.Windows.Forms.Button()
         Me.PrintPreview = New System.Windows.Forms.PrintPreviewControl()
         Me.PrintChequeDocument = New System.Drawing.Printing.PrintDocument()
@@ -43,7 +44,7 @@ Partial Class Code_Settings
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Degree = New System.Windows.Forms.NumericUpDown()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ButtonFont = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -54,6 +55,7 @@ Partial Class Code_Settings
         '
         'ComboBox1
         '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(17, 25)
         Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4)
@@ -63,6 +65,7 @@ Partial Class Code_Settings
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.ButtonAddCode)
         Me.GroupBox1.Controls.Add(Me.Button6)
         Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
@@ -72,15 +75,26 @@ Partial Class Code_Settings
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Code"
         '
+        'ButtonAddCode
+        '
+        Me.ButtonAddCode.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonAddCode.Location = New System.Drawing.Point(147, 57)
+        Me.ButtonAddCode.Name = "ButtonAddCode"
+        Me.ButtonAddCode.Size = New System.Drawing.Size(54, 29)
+        Me.ButtonAddCode.TabIndex = 6
+        Me.ButtonAddCode.Text = "Add"
+        Me.ButtonAddCode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonAddCode.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.ButtonAddCode.UseVisualStyleBackColor = True
+        '
         'Button6
         '
-        Me.Button6.Image = CType(resources.GetObject("Button6.Image"), System.Drawing.Image)
         Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button6.Location = New System.Drawing.Point(17, 57)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(184, 29)
+        Me.Button6.Size = New System.Drawing.Size(124, 29)
         Me.Button6.TabIndex = 5
-        Me.Button6.Text = "Edit Temporary Values"
+        Me.Button6.Text = "Edit Template"
         Me.Button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button6.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.Button6.UseVisualStyleBackColor = True
@@ -91,7 +105,7 @@ Partial Class Code_Settings
         Me.GroupBox2.Controls.Add(Me.ButtonAmount)
         Me.GroupBox2.Controls.Add(Me.ButtonPayeeLine2)
         Me.GroupBox2.Controls.Add(Me.ButtonPayeeLine1)
-        Me.GroupBox2.Controls.Add(Me.ButtonCrossCheck)
+        Me.GroupBox2.Controls.Add(Me.ButtonCrossLine)
         Me.GroupBox2.Controls.Add(Me.ButtonDate)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 116)
         Me.GroupBox2.Name = "GroupBox2"
@@ -153,18 +167,18 @@ Partial Class Code_Settings
         Me.ButtonPayeeLine1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.ButtonPayeeLine1.UseVisualStyleBackColor = True
         '
-        'ButtonCrossCheck
+        'ButtonCrossLine
         '
-        Me.ButtonCrossCheck.Image = CType(resources.GetObject("ButtonCrossCheck.Image"), System.Drawing.Image)
-        Me.ButtonCrossCheck.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonCrossCheck.Location = New System.Drawing.Point(17, 75)
-        Me.ButtonCrossCheck.Name = "ButtonCrossCheck"
-        Me.ButtonCrossCheck.Size = New System.Drawing.Size(184, 29)
-        Me.ButtonCrossCheck.TabIndex = 1
-        Me.ButtonCrossCheck.Text = "Cross Check"
-        Me.ButtonCrossCheck.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ButtonCrossCheck.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.ButtonCrossCheck.UseVisualStyleBackColor = True
+        Me.ButtonCrossLine.Image = CType(resources.GetObject("ButtonCrossLine.Image"), System.Drawing.Image)
+        Me.ButtonCrossLine.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonCrossLine.Location = New System.Drawing.Point(17, 75)
+        Me.ButtonCrossLine.Name = "ButtonCrossLine"
+        Me.ButtonCrossLine.Size = New System.Drawing.Size(184, 29)
+        Me.ButtonCrossLine.TabIndex = 1
+        Me.ButtonCrossLine.Text = "Cross Check"
+        Me.ButtonCrossLine.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonCrossLine.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.ButtonCrossLine.UseVisualStyleBackColor = True
         '
         'ButtonDate
         '
@@ -212,6 +226,7 @@ Partial Class Code_Settings
         Me.XPos.Name = "XPos"
         Me.XPos.Size = New System.Drawing.Size(50, 25)
         Me.XPos.TabIndex = 54
+        Me.XPos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Ypos
         '
@@ -222,6 +237,7 @@ Partial Class Code_Settings
         Me.Ypos.Name = "Ypos"
         Me.Ypos.Size = New System.Drawing.Size(50, 25)
         Me.Ypos.TabIndex = 55
+        Me.Ypos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
@@ -252,6 +268,7 @@ Partial Class Code_Settings
         Me.Degree.Name = "Degree"
         Me.Degree.Size = New System.Drawing.Size(50, 25)
         Me.Degree.TabIndex = 58
+        Me.Degree.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label4
         '
@@ -263,18 +280,18 @@ Partial Class Code_Settings
         Me.Label4.TabIndex = 59
         Me.Label4.Text = "Degree"
         '
-        'Button1
+        'ButtonFont
         '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.Location = New System.Drawing.Point(487, 9)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(45, 29)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Font"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.ButtonFont.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonFont.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonFont.Location = New System.Drawing.Point(487, 9)
+        Me.ButtonFont.Name = "ButtonFont"
+        Me.ButtonFont.Size = New System.Drawing.Size(45, 29)
+        Me.ButtonFont.TabIndex = 6
+        Me.ButtonFont.Text = "Font"
+        Me.ButtonFont.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonFont.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.ButtonFont.UseVisualStyleBackColor = True
         '
         'Label3
         '
@@ -295,7 +312,7 @@ Partial Class Code_Settings
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(898, 443)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.ButtonFont)
         Me.Controls.Add(Me.CbShow)
         Me.Controls.Add(Me.XPos)
         Me.Controls.Add(Me.Ypos)
@@ -324,7 +341,7 @@ Partial Class Code_Settings
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents ButtonCrossCheck As Button
+    Friend WithEvents ButtonCrossLine As Button
     Friend WithEvents ButtonDate As Button
     Friend WithEvents ButtonPayeeLine2 As Button
     Friend WithEvents ButtonPayeeLine1 As Button
@@ -341,6 +358,7 @@ Partial Class Code_Settings
     Friend WithEvents Label2 As Label
     Friend WithEvents Degree As NumericUpDown
     Friend WithEvents Label4 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents ButtonFont As Button
     Friend WithEvents Label3 As Label
+    Friend WithEvents ButtonAddCode As Button
 End Class

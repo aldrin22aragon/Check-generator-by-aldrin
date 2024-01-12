@@ -50,49 +50,49 @@
    Property FormTemplateProperty As Template
       Get
          Dim tp As Template = GroupBox1.Tag
-         Return New Template() With {
+            Return New Template() With {
             .Font = LblFont.Font,
             .X = XPos.Value,
             .Y = Ypos.Value,
             .Type = tp.Type,
             .RotateDegree = Degree.Value,
-            .SampleValue = TbSample.Text.Trim,
+            .______ = TbSample.Text.Trim,
             .Show = CbShow.Checked
          }
-      End Get
-      Set(value As Template)
-         GroupBox1.Tag = value
-         LblFont.Text = value.Font.ToString
-         '
-         LblFont.Font = value.Font
-         XPos.Value = value.X
-         Ypos.Value = value.Y
-         Degree.Value = value.RotateDegree
-         TbSample.Text = value.SampleValue
-         CbShow.Checked = value.Show
-      End Set
-   End Property
+        End Get
+        Set(value As Template)
+            GroupBox1.Tag = value
+            LblFont.Text = value.Font.ToString
+            '
+            LblFont.Font = value.Font
+            XPos.Value = value.X
+            Ypos.Value = value.Y
+            Degree.Value = value.RotateDegree
+            TbSample.Text = value.______
+            CbShow.Checked = value.Show
+        End Set
+    End Property
 
-   Private Sub PrintChequeDocument_PrintPage(sender As Object, e1 As Printing.PrintPageEventArgs) Handles PrintChequeDocument.PrintPage
-      Dim CurCellRowIndex As Integer = -1
-      If dgvTemplates.CurrentCell IsNot Nothing Then CurCellRowIndex = dgvTemplates.CurrentCell.RowIndex
-      For Each row As DataGridViewRow In dgvTemplates.Rows
-         Dim BrushColor As Brush = IIf(row.Index = CurCellRowIndex, Brushes.Red, Brushes.Black)
-         Dim PenColor As Pen = IIf(row.Index = CurCellRowIndex, Pens.Red, Pens.Black)
-         Dim tp As Template = row.Tag
-         Select Case tp.Type
-            Case Template.ENUM_TYPE.CROSS_CHECK
-               e1.Graphics.DrawLine(PenColor, 100, 570 - 280, 200, 520 - 280)
-               e1.Graphics.DrawLine(PenColor, 115, 570 - 280, 215, 520 - 280)
-            Case Template.ENUM_TYPE.DATE
-               e1.Graphics.DrawString(tp.SampleValue, tp.Font, BrushColor, New Point(tp.X, tp.Y))
-            Case Template.ENUM_TYPE.PAYEELINE1
-               e1.Graphics.DrawString(tp.SampleValue, tp.Font, BrushColor, New Point(tp.X, tp.Y))
-            Case Template.ENUM_TYPE.PAYEELINE2
-               e1.Graphics.DrawString(tp.SampleValue, tp.Font, BrushColor, New Point(tp.X, tp.Y))
-            Case Template.ENUM_TYPE.AMOUNT
-               e1.Graphics.DrawString(tp.SampleValue, tp.Font, BrushColor, New Point(tp.X, tp.Y))
-         End Select
+    Private Sub PrintChequeDocument_PrintPage(sender As Object, e1 As Printing.PrintPageEventArgs) Handles PrintChequeDocument.PrintPage
+        Dim CurCellRowIndex As Integer = -1
+        If dgvTemplates.CurrentCell IsNot Nothing Then CurCellRowIndex = dgvTemplates.CurrentCell.RowIndex
+        For Each row As DataGridViewRow In dgvTemplates.Rows
+            Dim BrushColor As Brush = IIf(row.Index = CurCellRowIndex, Brushes.Red, Brushes.Black)
+            Dim PenColor As Pen = IIf(row.Index = CurCellRowIndex, Pens.Red, Pens.Black)
+            Dim tp As Template = row.Tag
+            Select Case tp.Type
+                Case Template.ENUM_TYPE.CROSS_CHECK
+                    e1.Graphics.DrawLine(PenColor, 100, 570 - 280, 200, 520 - 280)
+                    e1.Graphics.DrawLine(PenColor, 115, 570 - 280, 215, 520 - 280)
+                Case Template.ENUM_TYPE.DATE
+                    e1.Graphics.DrawString(tp.______, tp.Font, BrushColor, New Point(tp.X, tp.Y))
+                Case Template.ENUM_TYPE.PAYEELINE1
+                    e1.Graphics.DrawString(tp.______, tp.Font, BrushColor, New Point(tp.X, tp.Y))
+                Case Template.ENUM_TYPE.PAYEELINE2
+                    e1.Graphics.DrawString(tp.______, tp.Font, BrushColor, New Point(tp.X, tp.Y))
+                Case Template.ENUM_TYPE.AMOUNT
+                    e1.Graphics.DrawString(tp.______, tp.Font, BrushColor, New Point(tp.X, tp.Y))
+            End Select
       Next
    End Sub
 
