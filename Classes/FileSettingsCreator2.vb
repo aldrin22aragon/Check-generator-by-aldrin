@@ -31,7 +31,7 @@ Public Class FileSettingsCreator2(Of T)
    Function setSettings(classObj As T, Optional showError As Boolean = False) As Boolean
       Dim res As Boolean = False
       Dim tmpStr As String = JsonConvert.SerializeObject(classObj)
-      Dim spl As Object = SplitInParts(tmpStr, 10)
+      Dim spl As Object = SplitInParts(tmpStr, 100)
       Dim newSplt As New List(Of String)
       For Each i As String In spl
          newSplt.Add(crpt.Encrypt(i))

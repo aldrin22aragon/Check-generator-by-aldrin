@@ -1,6 +1,6 @@
 ﻿Public Class Template
-    Public Show As Boolean = False
-    Public X As Integer = 0
+   Public Show As Boolean = True
+   Public X As Integer = 0
     Public Y As Integer = 0
     Public Font As New Font("Segoe UI", 12)
     Public RotateDegree As Integer

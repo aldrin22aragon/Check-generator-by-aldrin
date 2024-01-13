@@ -6,17 +6,16 @@
     Public Amount As Template
     Public SampleValues As New TmpValues
 
-    Class TmpValues
-        Dim tmp As String = "Tmp"
-        Public [Date] As String = tmp
-        Public CrossLine As String = tmp
-        Public PayeeLine1 As String = tmp
-        Public PayeeLine2 As String = tmp
-        Public Amount As String = tmp
-    End Class
+   Class TmpValues
+      Public [Date] As String = "2024-01-13"
+      Public CrossLine As String = ""
+      Public PayeeLine1 As String = "Aldrin Aragon"
+      Public PayeeLine2 As String = "Teraza Palo, Leyte"
+      Public Amount As String = "56,245.90"
+   End Class
 
 
-    Sub New()
+   Sub New()
         [Date] = New Template(Template.ENUM_TYPE.DATE)
         CrossLine = New Template(Template.ENUM_TYPE.CROSS_CHECK)
         PayeeLine1 = New Template(Template.ENUM_TYPE.PAYEELINE1)
