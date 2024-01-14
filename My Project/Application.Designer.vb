@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Check_Generator_Aldrin_.Guna_Form_Main
+            Me.MainForm = Global.Check_Generator_Aldrin_._Code_Settings
         End Sub
     End Class
 End Namespace

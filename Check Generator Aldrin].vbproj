@@ -51,18 +51,6 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
-      <HintPath>packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
-    </Reference>
-    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
-    </Reference>
-    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -95,22 +83,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\FileSettingsCreator2.vb" />
+    <Compile Include="Classes\_Code Templates.vb" />
     <Compile Include="Forms\Code Settings.Designer.vb">
       <DependentUpon>Code Settings.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Code Settings.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\GUna\Guna Code Settings.Designer.vb">
-      <DependentUpon>Guna Code Settings.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\GUna\Guna Code Settings.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\GUna\Guna Form Main.Designer.vb">
-      <DependentUpon>Guna Form Main.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\GUna\Guna Form Main.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Main Form.Designer.vb">
@@ -141,10 +118,16 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MetroFrame\FormMain.Designer.vb">
-      <DependentUpon>FormMain.vb</DependentUpon>
+    <Compile Include="Forms\_Code Settings.Designer.vb">
+      <DependentUpon>_Code Settings.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MetroFrame\FormMain.vb">
+    <Compile Include="Forms\_Code Settings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\_Main Form.Designer.vb">
+      <DependentUpon>_Main Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\_Main Form.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Globals.vb" />
@@ -179,17 +162,11 @@
     <EmbeddedResource Include="Forms\Code Settings.resx">
       <DependentUpon>Code Settings.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\GUna\Guna Code Settings.resx">
-      <DependentUpon>Guna Code Settings.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\GUna\Guna Form Main.resx">
-      <DependentUpon>Guna Form Main.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main Form.resx">
       <DependentUpon>Main Form.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MetroFrame\FormMain.resx">
-      <DependentUpon>FormMain.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\_Code Settings.resx">
+      <DependentUpon>_Code Settings.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
