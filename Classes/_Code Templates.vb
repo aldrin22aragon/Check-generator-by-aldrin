@@ -1,25 +1,23 @@
 ﻿Public Class _Code_Templates
-   Public Templates As List(Of Template) = Nothing
-   Public SampleValues As New TmpValues
-
-   Class TmpValues
-      Public [Date] As String = "2024-01-13"
-      Public CrossLine As String = ""
-      Public PayeeLine1 As String = "Aldrin Aragon"
-      Public PayeeLine2 As String = "Teraza Palo, Leyte"
-      Public Amount As String = "56,245.90"
-   End Class
-
+   Public Templates As Template() = Nothing
 
    Sub New()
-      Templates.Add(New Template())
-      [DateTime] = New Template(Template.ENUM_TYPE.DATE)
-      CrossLine = New Template(Template.ENUM_TYPE.CROSS_CHECK)
-      PayeeLine1 = New Template(Template.ENUM_TYPE.PAYEELINE1)
-      PayeeLine2 = New Template(Template.ENUM_TYPE.PAYEELINE2)
-      Amount = New Template(Template.ENUM_TYPE.AMOUNT)
+      Dim tmp As New List(Of Template)
+      '
+      Dim [Date] As New Template() With {.TemplateName = "Date", .TmpValue = "Date"}
+      Dim CrossLine As New Template() With {.TemplateName = "Crossline", .TmpValue = "CrossLine", .Type = Template.ENUM_TYPE.Line}
+      Dim PayeeLine1 As New Template() With {.TemplateName = "Payee Line1", .TmpValue = "Payee Line1"}
+      Dim PayeeLine2 As New Template() With {.TemplateName = "Payee Line2", .TmpValue = "Payee Line 2"}
+      Dim Amount As New Template() With {.TemplateName = "Amount", .TmpValue = "Amount"}
+      '
+      tmp.Add([Date])
+      tmp.Add(CrossLine)
+      tmp.Add(PayeeLine1)
+      tmp.Add(PayeeLine2)
+      tmp.Add(Amount)
+      '
+      Templates = tmp.ToArray
    End Sub
-
 
 
    Public Overrides Function ToString() As String

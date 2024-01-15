@@ -7,6 +7,9 @@
       If Not IO.Directory.Exists(CodesFolder) Then MkDir(CodesFolder)
    End Sub
    Public Function GetCodeFiles() As String()
-        Return IO.Directory.GetFiles(CodesFolder, "*.drihnz")
-    End Function
+      Return IO.Directory.GetFiles(CodesFolder, "*.drihnz")
+   End Function
+   Public Function NewCodeFile(fileName As String) As String
+      Return IO.Path.Combine(CodesFolder, fileName & ".drihnz")
+   End Function
 End Module
