@@ -4,11 +4,11 @@
    Sub New()
       Dim tmp As New List(Of Template)
       '
-      Dim [Date] As New Template() With {.TemplateName = "Date", .TmpValue = "Date"}
-      Dim CrossLine As New Template() With {.TemplateName = "Crossline", .TmpValue = "CrossLine", .Type = Template.ENUM_TYPE.Line}
-      Dim PayeeLine1 As New Template() With {.TemplateName = "Payee Line1", .TmpValue = "Payee Line1"}
-      Dim PayeeLine2 As New Template() With {.TemplateName = "Payee Line2", .TmpValue = "Payee Line 2"}
-      Dim Amount As New Template() With {.TemplateName = "Amount", .TmpValue = "Amount"}
+      Dim [Date] As New Template() With {.TemplateName = "Date", .SampleValue = "Date"}
+      Dim CrossLine As New Template() With {.TemplateName = "Crossline", .SampleValue = "CrossLine", .Type = Template.ENUM_TYPE.Line}
+      Dim PayeeLine1 As New Template() With {.TemplateName = "Payee Line1", .SampleValue = "Payee Line1"}
+      Dim PayeeLine2 As New Template() With {.TemplateName = "Payee Line2", .SampleValue = "Payee Line 2"}
+      Dim Amount As New Template() With {.TemplateName = "Amount", .SampleValue = "Amount"}
       '
       tmp.Add([Date])
       tmp.Add(CrossLine)

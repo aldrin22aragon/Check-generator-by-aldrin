@@ -3,8 +3,8 @@
 'in Manage NuGet Pacjages
 Imports Newtonsoft.Json
 Public Class FileSettingsCreator2(Of T)
-   ReadOnly path As String = ""
-   ReadOnly crpt As Crypt.String
+   Public ReadOnly path As String = ""
+   Public ReadOnly crpt As Crypt.String
    Dim instanceOfT As T
    Shared password As String = ""
 

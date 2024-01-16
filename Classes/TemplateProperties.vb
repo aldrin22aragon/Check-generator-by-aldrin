@@ -1,6 +1,6 @@
 ﻿Public Class Template
    Public TemplateName As String = ""
-   Public TmpValue As String = ""
+   Public SampleValue As String = ""
    '
 
    Public Show As Boolean = True

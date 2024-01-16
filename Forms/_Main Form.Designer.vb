@@ -22,9 +22,16 @@ Partial Class _Main_Form
    'Do not modify it using the code editor.
    <System.Diagnostics.DebuggerStepThrough()> _
    Private Sub InitializeComponent()
-      components = New System.ComponentModel.Container
-      Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-      Me.ClientSize = New System.Drawing.Size(800, 450)
-      Me.Text = "_Main_Form"
-   End Sub
+        Me.SuspendLayout()
+        '
+        '_Main_Form
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(824, 524)
+        Me.Name = "_Main_Form"
+        Me.Text = "_Main_Form"
+        Me.ResumeLayout(False)
+
+    End Sub
 End Class
